@@ -2,22 +2,65 @@
 <html>
 
 <head>
+<meta charset="UTF-8">
 <title>Trabajos de Electrónica y Analítica</title>
+
+<style>
+body{
+font-family: Arial;
+text-align:center;
+background:#f4f4f4;
+}
+
+h1{
+background:#222;
+color:white;
+padding:20px;
+}
+
+button{
+display:block;
+margin:10px auto;
+padding:12px;
+width:250px;
+font-size:16px;
+border:none;
+background:#2c7be5;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1a5bbf;
+}
+
+iframe{
+width:80%;
+height:600px;
+margin-top:20px;
+border:1px solid #ccc;
+}
+</style>
+
 </head>
 
 <body>
 
 <h1>Trabajos de Electrónica y Analítica</h1>
 
-<p>Selecciona un archivo para verlo:</p>
+<button onclick="abrirPDF('practica1.pdf')">Práctica 1</button>
+<button onclick="abrirPDF('practica2.pdf')">Práctica 2</button>
+<button onclick="abrirPDF('practica3.pdf')">Práctica 3</button>
+<button onclick="abrirPDF('fuente_voltaje.pdf')">Fuente de Voltaje</button>
 
-<ul>
-<li><a href="Práctica 1.pdf">Práctica 1</a></li>
-<li><a href="Práctica 2.pdf">Práctica 2</a></li>
-<li><a href="Práctica 3.pdf">Práctica 3</a></li>
-<li><a href="Informe de la fuente de voltaje.pdf">Informe fuente de voltaje</a></li>
-</ul>
+<iframe id="visor"></iframe>
+
+<script>
+function abrirPDF(pdf){
+document.getElementById("visor").src = pdf;
+}
+</script>
 
 </body>
-
 </html>
