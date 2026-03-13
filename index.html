@@ -51,12 +51,16 @@ border:1px solid #ccc;
 
 <h1>Trabajos de Electrónica</h1>
 
+<div id="menuUnidades">
+
 <h2>Selecciona una Unidad</h2>
 
 <button onclick="mostrarUnidad(1)">Unidad 1</button>
 <button onclick="mostrarUnidad(2)">Unidad 2</button>
 <button onclick="mostrarUnidad(3)">Unidad 3</button>
 <button onclick="mostrarUnidad(4)">Unidad 4</button>
+
+</div>
 
 <div id="practicas"></div>
 
@@ -66,35 +70,49 @@ border:1px solid #ccc;
 
 function mostrarUnidad(unidad){
 
+document.getElementById("menuUnidades").style.display="none";
+
 let contenido="";
 
 if(unidad==1){
 contenido = `
 <h3>Unidad 1</h3>
+
 <button onclick="abrirPDF('practica1.pdf')">Práctica 1</button>
 <button onclick="abrirPDF('practica2.pdf')">Práctica 2</button>
 <button onclick="abrirPDF('fuente_voltaje.pdf')">Fuente de Voltaje</button>
+
+<button onclick="volver()">⬅ Volver a Unidades</button>
 `;
 }
 
 if(unidad==2){
 contenido = `
 <h3>Unidad 2</h3>
+
 <button onclick="abrirPDF('practica3.pdf')">Práctica 3</button>
+
+<button onclick="volver()">⬅ Volver a Unidades</button>
 `;
 }
 
 if(unidad==3){
 contenido = `
 <h3>Unidad 3</h3>
+
 <p>No hay prácticas aún</p>
+
+<button onclick="volver()">⬅ Volver a Unidades</button>
 `;
 }
 
 if(unidad==4){
 contenido = `
 <h3>Unidad 4</h3>
+
 <p>No hay prácticas aún</p>
+
+<button onclick="volver()">⬅ Volver a Unidades</button>
 `;
 }
 
@@ -104,6 +122,14 @@ document.getElementById("practicas").innerHTML = contenido;
 
 function abrirPDF(pdf){
 document.getElementById("visor").src = pdf;
+}
+
+function volver(){
+
+document.getElementById("menuUnidades").style.display="block";
+document.getElementById("practicas").innerHTML="";
+document.getElementById("visor").src="";
+
 }
 
 </script>
